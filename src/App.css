@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #0f0f1a;
+  --surface: #13131f;
+  --surface2: #1a1a2e;
+  --main-color: #00c3ff;
+  --main-color-dim: #00cc6a;
+  --blue: #0066ff;
+  --purple: #7c3aed;
+  --text: #f0f0f5;
+  --text-muted: #8888aa;
+  --border: rgba(4, 184, 255, 0.253);
+  --font-ar: 'Tajawal', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+:root {
+  background-color: var(--bg);
+  color: white;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ar);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+
+/*#region css */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, .04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 10s linear infinite;
+}
+
+@keyframes gridMove {
+  to {
+    background-position: 60px 60px;
+  }
+}
+
+/* Glowing blobs */
+
+
+.blob-1 {
+  background: var(--main-color);
+  top: -100px;
+  left: -150px;
+  animation: float1 8s ease-in-out infinite;
+}
+
+.blob-2 {
+  background: var(--blue);
+  bottom: -80px;
+  right: -100px;
+  animation: float2 10s ease-in-out infinite;
+}
+
+.blob-3 {
+  background: var(--purple);
+  top: 40%;
+  left: 40%;
+  animation: float3 12s ease-in-out infinite;
+}
+
+@keyframes float1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  50% {
+    transform: translate(30px, -40px)
+  }
+}
+
+@keyframes float2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  50% {
+    transform: translate(-25px, 35px)
+  }
+}
+
+@keyframes float3 {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  50% {
+    transform: translate(20px, -20px)
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
+
+  50% {
+    opacity: .4;
+    transform: scale(1.5)
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── MOBILE NAV ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all .3s;
+}
+
+@media(max-width:768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Scroll progress */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 3px;
+  background: var(--main-color);
+  z-index: 200;
+  width: 0;
+  transition: width .1s;
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+/*#endregion */
