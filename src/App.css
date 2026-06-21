@@ -14,24 +14,14 @@
   --border: rgba(4, 184, 255, 0.253);
   --font-ar: 'Tajawal', sans-serif;
   --font-mono: 'Space Mono', monospace;
+  --shadow-hov: rgba(0, 170, 255, 0.35);
 }
-
+shadow-hov:hover {
+  box-shadow: 0 12px 40px var(--shadow-hov);
+}
 :root {
   background-color: var(--bg);
   color: white;
-}
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-ar);
-  line-height: 1.7;
-  overflow-x: hidden;
 }
 
 
@@ -139,28 +129,7 @@ body {
   }
 }
 
-/* ── MOBILE NAV ── */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-}
 
-.hamburger span {
-  width: 24px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: all .3s;
-}
-
-@media(max-width:768px) {
-  .hamburger {
-    display: flex;
-  }
-}
 
 /* Scroll progress */
 .progress-bar {
@@ -176,3 +145,20 @@ body {
 }
 
 /*#endregion */
+.link-hov:before {
+  content: "";
+  width:0%;
+  position: absolute;
+  background-color: var(--main-color);
+  height: 1.5px;
+  bottom: -7px;
+  transition: all 0.3s;
+}
+.link-hov:hover:before {
+  content: "";
+  width:100%;
+  position: absolute;
+  background-color: var(--main-color);
+  height: 1.5px;
+  bottom: -7px;
+}

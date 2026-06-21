@@ -20,7 +20,7 @@ function Services() {
           <ScrollReveal key={service.title}>
             <article
               className="group relative overflow-hidden rounded-2xl border border-(--border) bg-(--surface) p-8 transition duration-300
-            hover:-translate-y-1 hover:border-[rgba(0,255,136,.4)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] reveal"
+            hover:-translate-y-1 hover:border-[rgba(0,208,255,0.5)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] "
             >
               <div
                 className="pointer-events-none absolute top-0 right-0 h-30 w-30 rounded-full bg-[radial-gradient(circle,rgba(0,255,136,.08),transparent_70%)]

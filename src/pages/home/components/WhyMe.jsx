@@ -16,7 +16,8 @@ function WhyMe() {
         <div className="flex flex-col gap-6">
           {features.map((feature) => (
             <ScrollReveal key={feature.title} >
-              <article className="group flex gap-5 items-start rounded-2xl border border-(--border) bg-(--surface) p-6 transition-colors duration-300 hover:border-[rgba(0,255,136,.3)] reveal">
+              <article className="group flex gap-5 items-start rounded-2xl border border-(--border)
+              bg-(--surface) p-6 transition-colors duration-300 hover:border-[rgba(0,208,255,0.5)] ">
                 <div className="text-2xl mt-1">{feature.icon}</div>
                 <div>
                   <h4 className="mb-2 font-bold">{feature.title}</h4>

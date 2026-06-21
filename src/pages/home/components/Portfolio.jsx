@@ -19,66 +19,67 @@ function Portfolio() {
       <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
           <ScrollReveal key={project.title}>
-          <article
-            className="group overflow-hidden rounded-2xl border border-(--border) bg-(--surface) transition duration-300 hover:-translate-y-1 hover:border-[rgba(0,255,136,.25)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
-          >
-            <div className="relative flex h-50 items-center justify-center overflow-hidden">
-              <div
-                className={`relative flex h-full w-full items-center justify-center text-[4rem] ${project.bgClass}`}
-              >
-                {project.emoji}
+            <article
+              className="group overflow-hidden rounded-2xl border border-(--border) bg-(--surface) transition duration-300
+            hover:-translate-y-1 hover:border-[rgba(0,208,255,0.5)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
+            >
+              <div className="relative flex h-50 items-center justify-center overflow-hidden">
                 <div
-                  className="pointer-events-none absolute inset-0
+                  className={`relative flex h-full w-full items-center justify-center text-[4rem] ${project.bgClass}`}
+                >
+                  {project.emoji}
+                  <div
+                    className="pointer-events-none absolute inset-0
                   bg-[linear-gradient(rgba(0,255,136,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,136,0.03)_1px,transparent_1px)]
                   bg-size-[30px_30px]"
-                />
-              </div>
-              <div
-                className="absolute inset-0 flex items-center justify-center gap-3
+                  />
+                </div>
+                <div
+                  className="absolute inset-0 flex items-center justify-center gap-3
                 bg-black/50 opacity-0 transition duration-300 group-hover:opacity-100"
-              >
-                <a
-                  href="#"
-                  className="rounded-lg bg-(--main-color) px-4 py-2 text-sm font-bold text-black transition-transform duration-200 hover:scale-105"
                 >
-                  معاينة حية ↗
-                </a>
-                <a
-                  href="#"
-                  className="rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-white transition-transform duration-200 hover:scale-105"
-                >
-                  تفاصيل
-                </a>
-              </div>
-            </div>
-
-            <div className="p-6">
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <span className="text-[0.73rem] font-mono uppercase tracking-[1px] text-(--main-color)">
-                  {project.type}
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {project.badges.map((badge) => (
-                    <span
-                      key={badge.text}
-                      className={`rounded-full border px-2.5 py-1 text-[0.65rem] font-bold font-mono ${
-                        badge.tone === "green"
-                          ? "border-[rgba(0,255,136,.2)] bg-[rgba(0,255,136,.12)] text-(--main-color)"
-                          : "border-[rgba(0,102,255,.2)] bg-[rgba(0,102,255,.12)] text-[#6699ff]"
-                      }`}
-                    >
-                      {badge.text}
-                    </span>
-                  ))}
+                  <a
+                    href="#"
+                    className="rounded-lg bg-(--main-color) px-4 py-2 text-sm font-bold text-black transition-transform duration-200 hover:scale-105"
+                  >
+                    معاينة حية ↗
+                  </a>
+                  <a
+                    href="#"
+                    className="rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-white transition-transform duration-200 hover:scale-105"
+                  >
+                    تفاصيل
+                  </a>
                 </div>
               </div>
 
-              <h3 className="mb-2 text-lg font-extrabold">{project.title}</h3>
-              <p className="text-sm leading-7 text-(--text-muted)">
-                {project.description}
-              </p>
-            </div>
-          </article>
+              <div className="p-6">
+                <div className="mb-4 flex items-center justify-between gap-4">
+                  <span className="text-[0.73rem] font-mono uppercase tracking-[1px] text-(--main-color)">
+                    {project.type}
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {project.badges.map((badge) => (
+                      <span
+                        key={badge.text}
+                        className={`rounded-full border px-2.5 py-1 text-[0.65rem] font-bold font-mono ${
+                          badge.tone === "green"
+                            ? "border-[rgba(0,255,136,.2)] bg-[rgba(0,255,136,.12)] text-(--main-color)"
+                            : "border-[rgba(0,102,255,.2)] bg-[rgba(0,102,255,.12)] text-[#6699ff]"
+                        }`}
+                      >
+                        {badge.text}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <h3 className="mb-2 text-lg font-extrabold">{project.title}</h3>
+                <p className="text-sm leading-7 text-(--text-muted)">
+                  {project.description}
+                </p>
+              </div>
+            </article>
           </ScrollReveal>
         ))}
       </div>

@@ -1,8 +1,9 @@
 import AnimatedCounter from "../../../components/AnimatedCounter";
+
 function Hero({ className }) {
   return (
     <section
-      className={`${className} hero relative min-h-lvh grid place-content-center overflow-hidden`}
+      className={`${className} hero font-mono relative min-h-lvh grid place-content-center overflow-hidden`}
     >
       <div className="blob-1 absolute rounded-4xl blur-3xl opacity-15 w-[28em] h-[28em]"></div>
       <div className="blob-2 absolute rounded-4xl blur-3xl opacity-15 w-[24em] h-[24em]"></div>
@@ -36,7 +37,7 @@ function Hero({ className }) {
             href="#contact"
             className="inline-flex items-center gap-2 rounded-2xl bg-(--main-color)
               px-8 py-3 text-base font-extrabold text-black shadow-[0_0_30px_rgba(0,255,136,0.2)]
-              transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,255,136,0.4)]"
+              transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_12px_40px_var(--shadow-hov)]"
           >
             ⚡ اطلب مشروعك الآن
           </a>
@@ -51,9 +52,7 @@ function Hero({ className }) {
         <div className="flex flex-wrap justify-center gap-12 border-t border-(--border) mt-16 pt-12 animate-[fadeUp_0.8s_0.6s_ease_both]">
           <div className="text-center">
             +<AnimatedCounter to={12} duration={2} />
-            <div className="mt-1 text-sm text-(--text-muted)">
-              مشروع مكتمل
-            </div>
+            <div className="mt-1 text-sm text-(--text-muted)">مشروع مكتمل</div>
           </div>
           <div className="text-center">
             <AnimatedCounter to={98} duration={2} />%
@@ -63,9 +62,7 @@ function Hero({ className }) {
           </div>
           <div className="text-center">
             <AnimatedCounter to={100} duration={2} />%
-            <div className="mt-1 text-sm text-(--text-muted)">
-              رضا العملاء
-            </div>
+            <div className="mt-1 text-sm text-(--text-muted)">رضا العملاء</div>
           </div>
         </div>
       </div>
