@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-sm border-b border-(--border) shadow-sm">
+    <header className="fixed max-h-20  inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-sm border-b border-(--border) shadow-sm">
       <Container>
         <div className="flex w-full max-w-7xl items-center justify-between py-4">
           <a
@@ -40,7 +40,7 @@ export default function Navbar() {
           {/* 📱 Mobile Menu Toggle */}
           <button
             onClick={toggleMenu}
-            className="md:hidden relative w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+            className="md:hidden relative w-10 h-10  flex flex-col justify-center items-center gap-1.5 focus:outline-none"
             aria-label="Toggle menu"
           >
             {/* Burger Icon */}
@@ -66,7 +66,7 @@ export default function Navbar() {
         {isOpen && (
           <nav className="md:hidden overflow-hidden">
             <div
-              className={`bg-black/95 backdrop-blur-sm border-t border-gray-700 transition-all duration-300 ${
+              className={`bg-black/95 backdrop-blur-sm border-t mt-[0.46em] border-gray-700 transition-all duration-300 ${
                 isOpen ? "opacity-100" : "opacity-0"
               }`}
             >

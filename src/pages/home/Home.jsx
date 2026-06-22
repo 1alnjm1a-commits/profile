@@ -11,14 +11,14 @@ import WhyMe from "./components/WhyMe.jsx";
 function App() {
   return (
     <>
-      <Navbar  />
-      <Hero className="pt-10" />
+      <Navbar />
+      <Hero className="pt-25 pb-5" />
       <Services />
       <WhyMe />
-      <Portfolio/>
-      <Testimonials/>
-      <Contact/>
-      <Footer/>
+      <Portfolio />
+      <Testimonials />
+      <Contact />
+      <Footer />
     </>
   );
 }
