@@ -1,6 +1,6 @@
 import { projects } from "../../../const/sections";
 import ScrollReveal from "../../../components/ScrollReveal";
-
+import {Link} from "react-router-dom"
 function Portfolio() {
   return (
     <section
@@ -18,7 +18,7 @@ function Portfolio() {
 
       <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((project) => (
-          <ScrollReveal key={project.title}>
+          <ScrollReveal key={project.id}>
             <article
               className="group overflow-hidden rounded-2xl border border-(--border) bg-(--surface) transition duration-300
             hover:-translate-y-1 hover:border-[rgba(0,208,255,0.5)] hover:shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
@@ -44,12 +44,12 @@ function Portfolio() {
                   >
                     معاينة حية ↗
                   </a>
-                  <a
-                    href="#"
+                  <Link
+                    to={`/projects/${project.id}`}
                     className="rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold text-white transition-transform duration-200 hover:scale-105"
                   >
                     تفاصيل
-                  </a>
+                  </Link>
                 </div>
               </div>
 

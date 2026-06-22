@@ -1,7 +1,8 @@
 import { navItems } from "../const/sections";
 import Container from "../components/Container";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
+import {HashLink} from "react-router-hash-link"
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,23 +18,24 @@ export default function Navbar() {
     <header className="fixed max-h-20  inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-sm border-b border-(--border) shadow-sm">
       <Container>
         <div className="flex w-full max-w-7xl items-center justify-between py-4">
-          <a
-            href="#home"
+          <Link
+            to="/home"
             className="text-lg font-bold tracking-tight text-white sm:text-xl"
           >
             Ahmed<span className="text-sky-400">Dev</span>
-          </a>
+          </Link>
 
           {/* 💻 Desktop Menu */}
           <nav className="relative hidden items-center gap-10 md:flex">
             {navItems.map((item) => (
-              <a
+              <HashLink
+              
                 key={item.href}
-                href={item.href}
+                to={`/${item.href}`}
                 className="relative link-hov font-ar text-sm font-medium text-gray-200 transition hover:text-sky-400"
               >
                 {item.label}
-              </a>
+              </HashLink>
             ))}
           </nav>
 
@@ -72,14 +74,14 @@ export default function Navbar() {
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item) => (
-                  <a
+                  <HashLink
                     key={item.href}
-                    href={item.href}
+                    to={`/${item.href}`}
                     onClick={closeMenu}
                     className="block px-4 py-3 text-base font-medium text-gray-200 hover:text-sky-400 hover:bg-white/5 rounded-lg transition-all duration-200 border border-transparent hover:border-sky-400/30"
                   >
                     {item.label}
-                  </a>
+                  </HashLink>
                 ))}
               </div>
             </div>

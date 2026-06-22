@@ -22,9 +22,12 @@ shadow-hov:hover {
 :root {
   background-color: var(--bg);
   color: white;
+  
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 /*#region css */
 .hero::before {
   content: '';
